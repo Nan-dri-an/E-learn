@@ -1,0 +1,6 @@
+{
+    "/api":{
+        "target":"htttp://localhost:3000",
+        "secure":false
+    }
+}

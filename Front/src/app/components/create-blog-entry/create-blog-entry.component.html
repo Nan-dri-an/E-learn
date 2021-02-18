@@ -1,0 +1,47 @@
+
+<form [formGroup]="form" (ngSubmit)="post()">
+    <div >
+        <mat-card class="container">
+            <div style="width: 80%;">
+                <mat-card-content>
+                    <video controls muted="muted"> 
+                    <source controls muted="muted" *ngIf="form.get('headerVideo')?.value" src="http://localhost:3000/api/blogs/video/{{form.get('headerVideo')?.value}}" type="video/mp4">
+                    </video>
+                    <ul>
+                        <li>
+                            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                        </li>
+                    </ul>
+                    <mat-card-actions>
+                        <button mat-flat-button color="primary" (click)="onClick()">
+                            <!--<mat-icon>cloud_upload</mat-icon>-->
+                            <small>Upload Video</small>
+                        </button>
+                    </mat-card-actions>
+                </mat-card-content>
+            </div>
+            <div class="box">
+                <mat-form-field>
+                     <input matInput placeholder="Id" formControlName="id"><br>
+                 </mat-form-field>
+             
+                 <mat-form-field>
+                     <input matInput placeholder="Title"  formControlName="title"><br>
+                 </mat-form-field>
+             
+                 <mat-form-field>
+                     <input matInput placeholder="Description"  formControlName="description"><br>
+                 </mat-form-field>
+                <div style="display: flex; width: 100%;">
+                    <mat-form-field style="width: 100%;">
+                      <!-- <input matInput placeholder="Body"  formControlName="body"><br>-->
+                      <textarea matInput rows="15" placeholder="Enter tech" class="variable-textarea" formControlName="body"></textarea>
+                    </mat-form-field>    
+                 </div>
+            </div>
+            <button mat-flat-button color="primary" [disabled]="form.invalid" type="submit" (click)="post()"> Add </button>
+        </mat-card>
+        <input type="file" #fileUpload id="fileUpload" name="fileUpload" style="display: none;">
+    </div>
+  
+</form>

@@ -1,0 +1,30 @@
+<div style="width:100%;">
+    <mat-card *ngFor="let blogEntry of dataSource" style="margin-top:25px;">
+        <div style="display: flex;">
+
+            <div style="width: 20%;">
+                <video controls muted="muted"> 
+                    <source src="http://localhost:3000/api/blogs/video/{{blogEntry.headerVideo}}" type="video/mp4">
+                </video>
+
+            </div>
+            <div style="display: flexbox; position:absolute ; top: 10%; left: 40%; width: 60%;"> 
+            <h3>Tech: <br>{{blogEntry.body}}</h3>
+             
+
+            </div>
+            <div style="width: 20%;">
+                <h2>Title: {{blogEntry.title}}</h2>
+                <H3>Description: <br>{{blogEntry.description}}</H3>
+            </div>
+            <div style="width: 20%;">
+                <small>Author : {{blogEntry.author?.name}} <br> Email: {{blogEntry.author?.email}}<br>
+                    Posted: {{blogEntry.created}}  /{{blogEntry.publishedDate}}
+                </small>
+                <button mat-flat-button type="submit" (click)="delete(blogEntry.id)"> X </button>
+            </div>
+        </div>
+         
+    </mat-card>
+
+</div>

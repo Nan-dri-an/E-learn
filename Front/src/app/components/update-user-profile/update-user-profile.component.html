@@ -1,0 +1,21 @@
+<h1 style="text-align:center;">Update Name</h1>
+<form [formGroup]="form" (ngSubmit)="update()">
+    <div class="box">
+        
+        <mat-form-field>
+            <input matInput placeholder="ID" formControlName="id">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <input matInput placeholder="email" type="email" formControlName="email">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name" >
+        </mat-form-field><br>
+       
+
+        <button mat-flat-button color="primary"  type="submit"> Update </button>
+    </div>
+
+</form>>

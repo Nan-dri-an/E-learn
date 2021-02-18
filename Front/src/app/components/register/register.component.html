@@ -1,0 +1,33 @@
+<h1 style="text-align:center;">LOGIN PAGE</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="box">
+
+        <mat-form-field>
+            <input matInput placeholder="Full Name" formControlName="name">
+            <mat-hint *ngIf="registerForm.get('name')?.errors">Full name is required</mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-hint *ngIf="registerForm.get('email')?.errors">Email is required</mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Password" name="password" type="password" formControlName="password" >
+            <mat-hint *ngIf="registerForm.get('password')?.errors">password required </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Confirm Password" type="password" formControlName="passwordConfirm" >
+            <mat-hint *ngIf="registerForm.get('passwordConfirm')?.errors">required</mat-hint>
+           <!-- <mat-hint *ngIf="registerForm.hasError('passwordNotmatching')">. not matching</mat-hint>
+       --> </mat-form-field><br><br>
+
+        <button mat-flat-button color="primary" [disabled]="!registerForm.valid" type="submit"> Register </button>
+    </div>
+
+</form>>
+<!--
+<h3 *ngIf="registerForm.invalid">Contains following error </h3>
+<small *ngIf="registerForm.get('password')?.hasError('passwordInvalid')">Password is not containing a number</small>
+<small *ngIf="registerForm.get('passwordConfirm')?.hasError('passwordNotmatching')">Password is not matching</small>-->

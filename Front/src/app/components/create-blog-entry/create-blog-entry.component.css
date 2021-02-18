@@ -1,0 +1,33 @@
+mat-form-field{
+    width: 100%;
+    margin-top: 10px;
+}
+
+video{
+    border: 1px;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: center;
+}
+
+button
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(231, 222, 222);
+    padding: 5px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #000000;
+   
+}
+
